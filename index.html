@@ -27,16 +27,21 @@
             let num2 = parseInt(document.getElementById("num2").value)
             let operation = parseInt(document.getElementById("opr").value)
             
-            if (operation == 1){
-                add(num1, num2)
-            } else if (operation == 2){
-                sub(num1, num2)
-            } else if (operation == 3){
-                mul(num1, num2)
-            } else if (operation == 4){
-                div(num1, num2)
-            } else{
-                document.getElementById("result").innerHTML = "Invalid option"
+            switch(operation){
+                case 1:
+                    add(num1, num2);
+                    break;
+                case 2:
+                    sub(num1, num2);
+                    break;
+                case 3:
+                    mul(num1, num2);
+                    break;
+                case 4:
+                    div(num1, num2);
+                    break;
+                default:
+                    document.getElementById("result").innerHTML = "Invalid option"
             }
         }
 
