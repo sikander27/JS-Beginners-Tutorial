@@ -13,10 +13,10 @@
     
     <h3>Operation Type</h3>
     <select name="opr" id="opr">
-        <option value="1">Add</option>
-        <option value="2">Subtract</option>
-        <option value="3">Multiplication</option>
-        <option value="4">Division</option>
+        <option value="+">Add</option>
+        <option value="-">Subtract</option>
+        <option value="*">Multiplication</option>
+        <option value="/">Division</option>
     </select>
     <button id="calc" onclick="calculate()">Calculate</button>
 
@@ -24,24 +24,26 @@
         function calculate(){
             let num1 = parseInt(document.getElementById("num1").value)
             let num2 = parseInt(document.getElementById("num2").value)
-            let operation = parseInt(document.getElementById("opr").value)
+            let operator = document.getElementById("opr").value
             
-            switch(operation){
-                case 1:
-                    add(num1, num2);
+            switch(operator) {
+                case '+':
+                    result = num1 + num2;
                     break;
-                case 2:
-                    sub(num1, num2);
+                case '-':
+                    result = num1 - num2;
                     break;
-                case 3:
-                    mul(num1, num2);
+                case '*':
+                    result = num1 * num2;
                     break;
-                case 4:
-                    div(num1, num2);
+                case '/':
+                    result = num1 / num2;
                     break;
                 default:
-                    document.getElementById("result").innerHTML = "Invalid option"
+                    result = "Invalid operator";
             }
+
+            document.getElementById("result").innerHTML = result;
         }
 
         function add(num1, num2){
