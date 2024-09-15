@@ -10,34 +10,55 @@
     <h2 id="result">Your Result will come here</h2>
     <input type="number" name="Number 1" id="num1">
     <input type="number" name="Number 2" id="num2">
-
-    <button id="add" onclick="add()">Add</button>
-    <button id="sub" onclick="sub()">Subtract</button>
-    <button id="mul" onclick="mul()">Multiply</button>
-    <button id="div" onclick="div()">Divide</button>
+    
+    <h3>Operation Type</h3>
+    <input type="text" id="opr">
+    <ul>    
+        <li><strong>1</strong> for addition</li>
+        <li><strong>2</strong> for subtraction</li>
+        <li><strong>3</strong> for Multiplication</li>
+        <li><strong>4</strong> for Division</li>
+    </ul>
+    <button id="calc" onclick="calculate()">Calculate</button>
 
     <script>
-        function add(){
+        function calculate(){
             let num1 = parseInt(document.getElementById("num1").value)
             let num2 = parseInt(document.getElementById("num2").value)
+            let operation = parseInt(document.getElementById("opr").value)
+            
+            if (operation == 1){
+                add(num1, num2)
+            } else if (operation == 2){
+                sub(num1, num2)
+            } else if (operation == 3){
+                mul(num1, num2)
+            } else if (operation == 4){
+                div(num1, num2)
+            } else{
+                document.getElementById("result").innerHTML = "Invalid option"
+            }
+        }
+
+        function add(num1, num2){
+            
             let result = num1 + num2
             document.getElementById("result").innerHTML = result
         }
-        function sub(){
-            let num1 = parseInt(document.getElementById("num1").value)
-            let num2 = parseInt(document.getElementById("num2").value)
+
+        function sub(num1, num2){
+            
             let result = num1 - num2
             document.getElementById("result").innerHTML = result
         }
-        function mul(){
-            let num1 = parseInt(document.getElementById("num1").value)
-            let num2 = parseInt(document.getElementById("num2").value)
+
+        function mul(num1, num2){
+            
             let result = num1 * num2
             document.getElementById("result").innerHTML = result
         }
-        function div(){
-            let num1 = parseInt(document.getElementById("num1").value)
-            let num2 = parseInt(document.getElementById("num2").value)
+        function div(num1, num2){
+            
             let result = num1 / num2
             document.getElementById("result").innerHTML = result
         }
