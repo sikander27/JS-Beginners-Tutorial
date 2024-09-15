@@ -8,42 +8,17 @@
 <body>
     <h1>Calculator</h1>
     <h2 id="result">Your Result will come here</h2>
-    <input type="number" name="Number 1" id="num1">
-    <input type="number" name="Number 2" id="num2">
-    
-    <h3>Operation Type</h3>
-    <select name="opr" id="opr">
-        <option value="+">Add</option>
-        <option value="-">Subtract</option>
-        <option value="*">Multiplication</option>
-        <option value="/">Division</option>
-    </select>
+    <input type="text" name="expr" id="expr">
+
     <button id="calc" onclick="calculate()">Calculate</button>
 
     <script>
         function calculate(){
-            let num1 = parseInt(document.getElementById("num1").value)
-            let num2 = parseInt(document.getElementById("num2").value)
-            let operator = document.getElementById("opr").value
-            
-            switch(operator) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                    result = num1 / num2;
-                    break;
-                default:
-                    result = "Invalid operator";
-            }
+            let expression = document.getElementById("expr").value
+            const operations = expression.split(" ")
+            console.log(operations)
 
-            document.getElementById("result").innerHTML = result;
+            document.getElementById("result").innerHTML = eval(expression);
         }
 
         function add(num1, num2){
