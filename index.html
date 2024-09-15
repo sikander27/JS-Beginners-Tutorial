@@ -12,13 +12,12 @@
     <input type="number" name="Number 2" id="num2">
     
     <h3>Operation Type</h3>
-    <input type="text" id="opr">
-    <ul>    
-        <li><strong>1</strong> for addition</li>
-        <li><strong>2</strong> for subtraction</li>
-        <li><strong>3</strong> for Multiplication</li>
-        <li><strong>4</strong> for Division</li>
-    </ul>
+    <select name="opr" id="opr">
+        <option value="1">Add</option>
+        <option value="2">Subtract</option>
+        <option value="3">Multiplication</option>
+        <option value="4">Division</option>
+    </select>
     <button id="calc" onclick="calculate()">Calculate</button>
 
     <script>
